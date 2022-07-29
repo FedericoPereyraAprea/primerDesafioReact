@@ -6,6 +6,8 @@
     text-align: justify;
 }
 .precio {
+    font-weight: bolder;   
+}
+.stock {
     font-weight: bolder;
-    
 }

@@ -1,0 +1,23 @@
+.contador {
+    display: flex;
+    text-align: center;
+}
+.sumar {
+    border-radius: 5px;
+    border-color:#008CBA;
+    font-size: 15px;
+    height: 2vw;
+    width: 2vw;
+}
+.restar {
+    border-radius: 5px;
+    border-color: red;
+    font-size: 15px;
+    height: 2vw;
+    width: 2vw;
+}
+.contCarrito {
+    padding-top: 0.3vw;
+    height: 2vw;
+    width: 2vw;
+}

@@ -12,6 +12,9 @@ function Productos() {
             <div className='precio'>
                 Precio del producto
             </div>
+            <div className='stock'>
+                Stock del producto
+            </div>
         </Container>  
     );
 }
