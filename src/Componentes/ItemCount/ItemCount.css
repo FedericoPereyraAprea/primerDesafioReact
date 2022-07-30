@@ -1,6 +1,8 @@
 .contador {
     display: flex;
     text-align: center;
+    display: flex;
+    justify-content: center;
 }
 .sumar {
     border-radius: 5px;

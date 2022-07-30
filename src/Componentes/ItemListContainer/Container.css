@@ -1,8 +1,18 @@
 .base-productos {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-top: 20px;
     background-color: cadetblue;
     padding: 12px;
     border-radius: 4px;
+    text-align: center;
 }
+.imagenes {
+    max-width: 80%;
+    border-radius: 15px;
+}
+.producto, .precio, .stock {
+    
+    font-weight: bolder;
+}
+
