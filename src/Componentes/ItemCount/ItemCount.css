@@ -4,7 +4,7 @@
 }
 .sumar {
     border-radius: 5px;
-    border-color:#008CBA;
+    border-color:#7fdf6c;
     font-size: 15px;
     height: 2vw;
     width: 2vw;
@@ -15,9 +15,17 @@
     font-size: 15px;
     height: 2vw;
     width: 2vw;
+    
 }
 .contCarrito {
     padding-top: 0.3vw;
+    height: 2vw;
+    width: 2vw;
+}
+.disabledButton {
+    border-radius: 5px;
+    border-color:grey;
+    font-size: 15px;
     height: 2vw;
     width: 2vw;
 }

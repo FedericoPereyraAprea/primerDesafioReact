@@ -4,20 +4,25 @@ import './ItemCount.css';
 function Contador () {
     const [contador, setContador] = useState(0);
     function sumar () {
-        setContador(contador + 1)
-        //contador > 10 ? setContador(contador + 1) : alert('No hay mas stock');
+        if(contador == 10){
+            return
+        }
+        setContador(contador + 1);
+        
     }
     function restar () {
-        setContador(contador - 1)
-        contador > 0 ? setContador(contador - 1) : alert('No hay mas productos en el carrito');
+        if(contador < 1){
+            return
+        }
+        setContador(contador - 1);
     }
     return (
     <div className='contador'>
-        <button className='restar' onClick={restar}>-</button>
+        <button className={contador > 0 ? 'restar' : 'disabledButton'} onClick={restar}> - </button>
         <p className='contCarrito'>
             {contador}
         </p>
-        <button className='sumar' onClick={sumar}>+</button>
+        <button className={contador < 10 ? 'sumar' : 'disabledButton'} onClick={sumar}> + </button>
     </div>
     );
 }
