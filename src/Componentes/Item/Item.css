@@ -1,9 +1,9 @@
-
 .base-productos { 
     width: 30%;
     background-color: cadetblue;
-    margin-top: 20px;
+    margin-top: 10px;
     margin-left: 30px;
+    margin-bottom: 20px;
     border-radius: 20px;
 }
 .productos {
@@ -16,6 +16,26 @@
     max-width: 80%;
     border-radius: 15px;
 }
-.productoNombre, .precio, .stock {
+.producto-nombre, .precio, .stock {
      font-weight: bolder;
+}
+.producto-nombre{
+    font-family:'Arial Narrow', Arial, sans-serif;
+    font-size: 150%;
+}
+.precio {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 200%;
+    color: azure;
+}
+.stock {
+    font-family:'Arial Narrow', Arial, sans-serif;
+    font-size: 110%;
+}
+.mas-info {
+    background-color: rgb(204, 186, 221);
+    justify-content: center;
+    margin-left: 37px;
+    margin-bottom: 25px;
+    border-radius: 15px;
 }

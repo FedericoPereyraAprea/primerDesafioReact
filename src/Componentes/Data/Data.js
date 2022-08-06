@@ -1,6 +1,6 @@
 const Data=[{
     "id": 1,
-    "nombre": "Taza magica personalizada",
+    "nombre": "TAZA MAGICA PERZONALIZADA",
     "descripcion": "Diseña la taza perfecta para regalar o regalarte.",
     "precio": 500,
     "stock": 30,
@@ -8,7 +8,7 @@ const Data=[{
 },
 {
     "id": 2,
-    "nombre": "Resma A4 Autor",
+    "nombre": "RESMA A4 AUTOR",
     "descripcion": "500 hojas de 210 x 297 mm blancas listas para usar.",
     "precio": 650,
     "stock": 87,
@@ -16,7 +16,7 @@ const Data=[{
 },
 {
     "id": 3,
-    "nombre": "Resma A3 Autor",
+    "nombre": "RESMA 43 AUTOR",
     "descripcion": "250 hojas de 297 x 420 mm listas para usar.",
     "precio": 900,
     "stock": 64,
@@ -24,7 +24,7 @@ const Data=[{
 },
 {
     "id": 4,
-    "nombre": "Aceite de Coco",
+    "nombre": "ACEITE DE COCO",
     "descripcion": "100% Coco",
     "precio": 750,
     "stock": 25,
@@ -32,7 +32,7 @@ const Data=[{
 },
 {
     "id": 5,
-    "nombre": "Dulce de leche chico",
+    "nombre": "DULCE DE LECHE CHICO",
     "descripcion": "El mejor dulce regional para tus postres.",
     "precio": 340,
     "stock": 18,
@@ -40,7 +40,7 @@ const Data=[{
 },
 {
     "id": 6,
-    "nombre": "Dulce de leche grande",
+    "nombre": "DULCE DE LECHE GRANDE",
     "descripcion": "El mejor dulce regional ahora mas grande",
     "precio": 790,
     "stock": 18,
@@ -48,7 +48,7 @@ const Data=[{
 },
 {
     "id": 7,
-    "nombre": "Sello automatico",
+    "nombre": "SELLO AUTOMATICO",
     "descripcion": "Perzonaliza tu sello con hasta 4 lineas.",
     "precio": 450,
     "stock": 42,
@@ -56,7 +56,7 @@ const Data=[{
 },
 {
     "id": 8,
-    "nombre": "Yerba don arregui",
+    "nombre": "YERBA DON ARREGUI",
     "descripcion": "La yerba Cordobesa.",
     "precio": 350,
     "stock": 20,
@@ -64,7 +64,7 @@ const Data=[{
 },
 {
     "id": 9,
-    "nombre": "Yerba kalena",
+    "nombre": "YERBA KALENA",
     "descripcion": "La Yerba con palo mas rica",
     "precio": 450,
     "stock": 20,
