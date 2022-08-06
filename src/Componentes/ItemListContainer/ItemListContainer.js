@@ -5,25 +5,25 @@ import ItemList from '../ItemList/ItemList';
 
 function Container() {
     const[data, setdata]=useState([]);
-    const getFetch= new Promise((res,rej)=>{
-        let condition=true
+    const getFetch = new Promise((res,rej)=>{
+        let condition = true
         if(condition){
             setTimeout(() => {
                 res(Data)
-            }, 2000);
+            }, 3000);
         }
         else{
             rej(console.log("No hay productos"))
         }
     })
-    useEffect(()=>{
+    useEffect(() => {
         getFetch
-        .then((resp)=>setdata(resp))
-        .catch(err=>console.log(err))
+        .then((resp) => setdata(resp))
+        .catch(err => console.log(err))
       });
 
     return (
-        <ItemList producto={data}/>   
+        <ItemList producto = {data}/>   
     );
 }
 export default Container;

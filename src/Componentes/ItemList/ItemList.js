@@ -1,23 +1,11 @@
-import React from 'react'
-import Data from '../Data/Data'
 import "./ItemList.css"
-import Contador from '../ItemCount/ItemCount';
+import React from 'react'
+import Item from '../Item/Item'
 
 const ItemList = (props) => {
-  return (
-    <div className='base'>
-            <div className='base-productos'>
-                {
-                    Data.map(producto => <li key={producto.id}>
-                        <ul><img className='imagenes' src={producto.imagen}/></ul>
-                        <ul className='producto'>{producto.nombre}</ul>
-                        <ul className='desc-productos'>{producto.descripcion}</ul>
-                        <ul className='precio'>${producto.precio} </ul>
-                        <ul className='stock'>Stock: {producto.stock}</ul>
-                        <ul><Contador/></ul>
-                    </li>)
-                }
-            </div>        
+    return (
+        <div className="contenedor">
+            {props.producto.map(producto => <Item producto={producto} key={producto.id} stock={producto.stock}/>)}
         </div>
   )
 }

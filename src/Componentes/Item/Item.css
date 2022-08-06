@@ -1,0 +1,21 @@
+
+.base-productos { 
+    width: 30%;
+    background-color: cadetblue;
+    margin-top: 20px;
+    margin-left: 30px;
+    border-radius: 20px;
+}
+.productos {
+    padding-top: 12px;
+    text-align: center;
+    list-style:none;
+    margin-left: -28px;
+}
+.imagenes {
+    max-width: 80%;
+    border-radius: 15px;
+}
+.productoNombre, .precio, .stock {
+     font-weight: bolder;
+}
