@@ -20,10 +20,10 @@ function Container() {
         getFetch
         .then((resp)=>setdata(resp))
         .catch(err=>console.log(err))
-      },[]);
+      });
 
     return (
-        <ItemList productos={Data}/>   
+        <ItemList producto={data}/>   
     );
 }
 export default Container;
