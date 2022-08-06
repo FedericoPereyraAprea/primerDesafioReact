@@ -1,12 +1,21 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
-import './Container.css';
-import Contador from '../ItemCount/ItemCount';
-import getFetch from '../Item/Item';
+import Data from '../Data/Data';
+import ItemList from '../ItemList/ItemList';
 
-function Container(props) {
+function Container() {
     const[data, setdata]=useState([]);
-
+    const getFetch= new Promise((res,rej)=>{
+        let condition=true
+        if(condition){
+            setTimeout(() => {
+                res(Data)
+            }, 2000);
+        }
+        else{
+            rej(console.log("No hay productos"))
+        }
+    })
     useEffect(()=>{
         getFetch
         .then((resp)=>setdata(resp))
@@ -14,20 +23,7 @@ function Container(props) {
       },[]);
 
     return (
-        <div className='base'>
-            <div className='base-productos'>
-                {
-                    data.map(producto => <li key={producto.id}>
-                        <ul><img className='imagenes' src={producto.imagen}/></ul>
-                        <ul className='producto'>{producto.nombre}</ul>
-                        <ul className='desc-productos'>{producto.descripcion}</ul>
-                        <ul className='precio'>${producto.precio} </ul>
-                        <ul className='stock'>Stock: {producto.stock}</ul>
-                        <ul><Contador/></ul>
-                    </li>)
-                }
-            </div>        
-        </div>    
+        <ItemList productos={Data}/>   
     );
 }
 export default Container;
