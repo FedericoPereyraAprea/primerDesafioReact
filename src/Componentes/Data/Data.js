@@ -71,15 +71,4 @@ const Data=[{
     "imagen": "../../Multimedia/Fotos/productoyerba2.jpg"
 }]
 
-/*const getFetch= new Promise((res,rej)=>{
-    let condition=true
-    if(condition){
-        setTimeout(() => {
-            res(Item)
-        }, 2000);
-    }
-    else{
-        rej(console.log("No hay productos"))
-    }
-})*/
 export default Data;
