@@ -1,29 +1,20 @@
-import React from 'react';
-import { useEffect, useState } from 'react';
-import Data from '../Data/Data';
-import ItemList from '../ItemList/ItemList';
+import React from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { getItemsByCategory } from "../../Api/utils";
+import ItemList from "../ItemList/ItemList";
 
 function Container() {
-    const[data, setdata]=useState([]);
-    const getFetch = new Promise((res,rej)=>{
-        let condition = true
-        if(condition){
-            setTimeout(() => {
-                res(Data)
-            }, 3000);
-        }
-        else{
-            rej(console.log("No hay productos"))
-        }
-    })
-    useEffect(() => {
-        getFetch
-        .then((resp) => setdata(resp))
-        .catch(err => console.log(err))
-      });
+  const [data, setdata] = useState([]);
+  const { category } = useParams();
 
-    return (
-        <ItemList producto = {data}/>   
-    );
+  useEffect(() => {
+    getItemsByCategory(category)
+      .then((resp) => setdata(resp))
+      .catch((err) => console.log(err));
+  }, [category]);
+
+  return <ItemList producto={data} />;
 }
+
 export default Container;

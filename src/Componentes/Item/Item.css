@@ -33,9 +33,15 @@
     font-size: 110%;
 }
 .mas-info {
-    background-color: rgb(204, 186, 221);
+    background-color: rgb(24, 65, 199);
     justify-content: center;
     margin-left: 37px;
     margin-bottom: 25px;
     border-radius: 15px;
+    font-style: oblique;
+    color: white;
+}
+.mas-info:hover {
+    outline-offset: 80px;
+    text-shadow: 1px 1px 6px #fff;
 }

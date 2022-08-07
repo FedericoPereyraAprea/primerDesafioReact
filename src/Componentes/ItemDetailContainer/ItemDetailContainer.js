@@ -1,31 +1,36 @@
-import "./ItemDetailContainer.css"
-import Data from '../Data/Data';
-import React, { useEffect, useState } from 'react'
+import "./ItemDetailContainer.css";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import ItemDetail from '../ItemDetail/ItemDetail'
+import ItemDetail from "../ItemDetail/ItemDetail";
+import { getItemById } from "../../Api/utils";
 
 function ItemDetailContainer() {
-    const[data, setdata]=useState([]);
-    const { id } = useParams();
-    const getFetch = new Promise((res,rej)=>{
-        let condition = true
-        if(condition){
-            setTimeout(() => {
-                res(Data)
-            }, 2000);
-        }
-        else{
-            rej(console.log("No hay productos"))
-        }
-    })
-    useEffect(() => {
-        getFetch
-        .then((resp) => setdata(resp))
-        .catch(err => console.log(err))
-      }, [id]);
+  const [data, setdata] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { id } = useParams();
 
-    return (
-        <ItemDetail {...data}/>   
-    );
+  useEffect(() => {
+    if (id) {
+      getItemById(id)
+        .then((resp) => {
+          setIsLoading(false);
+          setdata(resp);
+        })
+        .catch((err) => {
+          setIsLoading(false);
+          console.log(err);
+        });
+    }
+  }, [id]);
+
+  return (
+    <div>
+      {isLoading ? (
+        <h1 className="espera">Cargando, por favor espere...</h1>
+      ) : (
+        <ItemDetail {...data} />
+      )}
+    </div>
+  );
 }
 export default ItemDetailContainer;

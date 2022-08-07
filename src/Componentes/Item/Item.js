@@ -1,7 +1,7 @@
 import "./Item.css"
 import React from 'react'
 import Contador from '../ItemCount/ItemCount'
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Item = ({producto}) => {
     const irDetalles = useNavigate();
@@ -18,7 +18,7 @@ const Item = ({producto}) => {
                     <ul className='stock'>Stock: {producto.stock}</ul>
                     <ul><Contador/></ul>
                     <button className="mas-info" onClick={itemDetailContainer}>Más Detalles</button>
-                    <Link to={`/item/${producto.id}`}>alla vamos!</Link>
+                    
                 </li>
             </div> 
         </div>        
