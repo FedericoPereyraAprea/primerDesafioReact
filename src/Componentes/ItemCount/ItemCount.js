@@ -1,38 +1,45 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ItemCount.css";
 
-const Contador = () => {
-  const [contador, setContador] = useState(0);
-  function sumar() {
-    if (contador == 10) {
-      return;
-    }
-    setContador(contador + 1);
-  }
-  function restar() {
-    if (contador < 1) {
-      return;
-    }
-    setContador(contador - 1);
-  }
+export const Contador = ({ initial, stock, onAdd }) => {
+  const [count, setCount] = useState(1);
+  const restar = () => {
+    setCount(count - 1);
+  };
+  const sumar = () => {
+    setCount(count + 1);
+  };
   return (
-    <div className="contador">
-      <button
-        className={contador > 0 ? "restar" : "disabledButton"}
-        onClick={restar}
-      >
-        {" "}
-        -{" "}
-      </button>
-      <p className="contCarrito">{contador}</p>
-      <button
-        className={contador < 10 ? "sumar" : "disabledButton"}
-        onClick={sumar}
-      >
-        {" "}
-        +{" "}
-      </button>
-    </div>
+    <>
+      <div className="contador">
+        <button
+          disabled={count <= 1}
+          className={count > 0 ? "restar" : "disabledButton"}
+          onClick={restar}
+        >
+          {" "}
+          -{" "}
+        </button>
+        <p className="contCarrito">{count}</p>
+        <button
+          disabled={count >= stock}
+          className={count <= stock ? "sumar" : "disabledButton"}
+          onClick={sumar}
+        >
+          {" "}
+          +{" "}
+        </button>
+      </div>
+      <div className="contAddCarrito">
+        <button
+          className="addCarrito"
+          disabled={stock <= 0}
+          onClick={() => onAdd(count)}
+        >
+          Agregar al carrito
+        </button>
+      </div>
+    </>
   );
 };
 

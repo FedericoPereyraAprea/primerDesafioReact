@@ -1,6 +1,7 @@
 import "./ItemDetail.css";
-import React from "react";
+import React, { useState } from "react";
 import Contador from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 
 export default function ItemDetail({
   imagen,
@@ -9,6 +10,10 @@ export default function ItemDetail({
   precio,
   stock,
 }) {
+  const [goToCart, setGoToCart] = useState(false);
+  const onAdd = (quantity) => {
+    setGoToCart(true);
+  };
   return (
     <div className="base-productos individual">
       <div className="productos">
@@ -21,7 +26,11 @@ export default function ItemDetail({
           <ul className="precio item">${precio}</ul>
           <ul className="stock">Stock:{stock}</ul>
           <ul>
-            <Contador />
+            {goToCart ? (
+              <Link to="/cart">Finalizar compra</Link>
+            ) : (
+              <Contador initial={1} stock={stock} onAdd={onAdd} />
+            )}
           </ul>
         </li>
       </div>

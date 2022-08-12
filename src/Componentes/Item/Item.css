@@ -11,6 +11,7 @@
     text-align: center;
     list-style:none;
     margin-left: -28px;
+    padding-bottom: 5px;
 }
 .imagenes {
     max-width: 80%;
@@ -40,6 +41,7 @@
     border-radius: 15px;
     font-style: oblique;
     color: white;
+    border-color: #fff;
 }
 .mas-info:hover {
     outline-offset: 80px;
