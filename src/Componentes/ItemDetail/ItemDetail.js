@@ -2,8 +2,10 @@ import "./ItemDetail.css";
 import React, { useState } from "react";
 import Contador from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useCartContext } from "../../context/CartContext";
 
 export default function ItemDetail({
+  id,
   imagen,
   nombre,
   descripcion,
@@ -11,8 +13,10 @@ export default function ItemDetail({
   stock,
 }) {
   const [goToCart, setGoToCart] = useState(false);
+  const { addProduct } = useCartContext();
   const onAdd = (quantity) => {
     setGoToCart(true);
+    addProduct(quantity);
   };
   return (
     <div className="base-productos individual">

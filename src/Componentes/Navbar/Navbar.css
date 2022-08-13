@@ -1,0 +1,23 @@
+
+img {
+    max-height: 100%;
+}
+.logo {
+    height: 50px;
+    width: 50px;
+}
+.navBars {
+    text-decoration: none;
+    color: cadetblue;
+    font-family: Helvetica, sans-serif;
+}
+.navBars:hover {
+    outline-offset: 80px;
+    text-shadow: 10px 10px 4px rgb(12, 7, 1);
+    
+}
+.carrito {
+    height: 50px;
+    width: 50px;
+}
+
