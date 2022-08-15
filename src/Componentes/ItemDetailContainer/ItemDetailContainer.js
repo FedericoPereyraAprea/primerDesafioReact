@@ -28,7 +28,7 @@ function ItemDetailContainer() {
       {isLoading ? (
         <h1 className="espera">Cargando producto, por favor espere...</h1>
       ) : (
-        <ItemDetail {...data} />
+        <ItemDetail item={data} />
       )}
     </div>
   );

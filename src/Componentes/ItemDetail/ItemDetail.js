@@ -4,19 +4,13 @@ import Contador from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
 import { useCartContext } from "../../context/CartContext";
 
-export default function ItemDetail({
-  id,
-  imagen,
-  nombre,
-  descripcion,
-  precio,
-  stock,
-}) {
+export default function ItemDetail({ item }) {
+  const { id, imagen, nombre, descripcion, precio, stock } = item;
   const [goToCart, setGoToCart] = useState(false);
   const { addProduct } = useCartContext();
   const onAdd = (quantity) => {
     setGoToCart(true);
-    addProduct(quantity); // aca creo que esta el error no tomo ninguna prop como en el item.js
+    addProduct(item, quantity); // aca creo que esta el error no tomo ninguna prop como en el item.js
   };
   return (
     <div className="base-productos individual">
