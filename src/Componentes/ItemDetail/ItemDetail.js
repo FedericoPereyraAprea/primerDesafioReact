@@ -10,7 +10,7 @@ export default function ItemDetail({ item }) {
   const { addProduct } = useCartContext();
   const onAdd = (quantity) => {
     setGoToCart(true);
-    addProduct(item, quantity); // aca creo que esta el error no tomo ninguna prop como en el item.js
+    addProduct(item, quantity);
   };
   return (
     <div className="base-productos individual">
