@@ -9,3 +9,21 @@
 .item {
     font-size: 50px;
 }
+.linksDetail {
+    display: flex;
+    flex-direction: column;
+}
+.segCompra, .finCompra {
+    text-decoration: none;
+}
+.segCompra {
+    color: rgb(241, 105, 25);
+    font-weight: bolder;
+    font-size: 20px;
+}
+.finCompra {
+    color: rgb(63, 211, 63);
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 25px;
+}

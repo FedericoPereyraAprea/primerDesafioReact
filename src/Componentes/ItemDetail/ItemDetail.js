@@ -25,7 +25,16 @@ export default function ItemDetail({ item }) {
           <ul className="stock">Stock:{stock}</ul>
           <ul>
             {goToCart ? (
-              <Link to="/cart">Finalizar compra</Link>
+              <>
+                <div className="linksDetail">
+                  <Link to="/" className="segCompra">
+                    Seguir comprando
+                  </Link>
+                  <Link to="/cart" className="finCompra">
+                    Finalizar compra
+                  </Link>
+                </div>
+              </>
             ) : (
               <Contador initial={1} stock={stock} onAdd={onAdd} />
             )}

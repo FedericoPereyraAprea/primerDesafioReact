@@ -1,0 +1,27 @@
+.itemCart {
+    display: flex;
+    color: rgb(158, 103, 22);
+    border-bottom: 10px solid rgb(26, 54, 131);
+    max-width: 500px;
+    margin: 1rem auto;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+.itemCart img {
+    width: 200px;
+    margin-right: 1rem;
+}
+.nombreProd {
+    font-weight: bolder;
+    color: rgb(7, 46, 46);
+}
+.subtotal {
+    font-weight: bold;
+}
+.eliProduct {
+    border-radius: 15px;
+    border-color: red;
+    color: white;
+    background-color: brown;
+    margin-left: 258px;
+    
+}
