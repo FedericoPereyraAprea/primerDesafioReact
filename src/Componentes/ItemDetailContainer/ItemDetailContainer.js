@@ -1,36 +1,18 @@
 import "./ItemDetailContainer.css";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getItemById } from "../../Api/utils";
 
 function ItemDetailContainer() {
-  const [data, setdata] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
+  const [data, setData] = useState([]);
   const { id } = useParams();
-
   useEffect(() => {
-    if (id) {
-      getItemById(id)
-        .then((resp) => {
-          setIsLoading(false);
-          setdata(resp);
-        })
-        .catch((err) => {
-          setIsLoading(false);
-          console.log(err);
-        });
-    }
+    const querydb = getFirestore();
+    const queryDoc = doc(querydb, "productos", id);
+    getDoc(queryDoc).then((res) => setData({ id: res.id, ...res.data() }));
   }, [id]);
 
-  return (
-    <div>
-      {isLoading ? (
-        <h1 className="espera">Cargando producto, por favor espere...</h1>
-      ) : (
-        <ItemDetail item={data} />
-      )}
-    </div>
-  );
+  return <ItemDetail item={data} />;
 }
 export default ItemDetailContainer;
