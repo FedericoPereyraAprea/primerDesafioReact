@@ -24,7 +24,9 @@ const CartProvider = ({ children }) => {
       (acumulador, productoActual) => acumulador + productoActual.quantity,
       0
     );
-  const clearCart = () => setCart([]);
+  const clearCart = () => {
+    setCart([]);
+  };
   const isInCart = (id) =>
     cart.find((product) => product.id === id) ? true : false;
   const removeProduct = (id) =>

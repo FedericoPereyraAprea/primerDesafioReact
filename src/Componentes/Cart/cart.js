@@ -29,18 +29,20 @@ const Cart = () => {
   const finalizarCompra = () => {
     const db = getFirestore();
     const ordersCollection = collection(db, "orders");
-    addDoc(ordersCollection, order);
-    MySwal.fire({
-      title: <strong>¡Orden Generada!</strong>,
-      html: (
-        <i>
-          ¡Te contactaremos a la brevedad!
-          <br />
-          Gracias por confiar en GraficaB377
-        </i>
-      ),
-      icon: "success",
-    });
+    addDoc(ordersCollection, order).then((result) =>
+      MySwal.fire({
+        title: <strong>¡Orden {result.id} Generada!</strong>,
+        html: (
+          <i>
+            ¡Te contactaremos a la brevedad!
+            <br />
+            Gracias por confiar en GraficaB377
+          </i>
+        ),
+        icon: "success",
+      })
+    );
+    cart.clearCart();
   };
   if (cart.length === 0) {
     return (
