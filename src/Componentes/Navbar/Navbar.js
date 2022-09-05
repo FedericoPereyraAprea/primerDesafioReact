@@ -2,7 +2,7 @@ import LogoGrafica from "./logografica.png";
 import "./Navbar.css";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
-import CartWidget from "../CartWidget.js/cartWidget";
+import CartWidget from "../CartWidget/CartWidget";
 import { NavLink } from "react-router-dom";
 
 function NavbarGrafica() {
