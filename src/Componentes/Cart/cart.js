@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 
 const Cart = () => {
-  const { cart, totalPrice } = useCartContext();
+  const { cart, totalPrice, clearCart } = useCartContext();
   const MySwal = withReactContent(Swal);
   const order = {
     buyer: {
@@ -42,7 +42,7 @@ const Cart = () => {
         icon: "success",
       })
     );
-    cart.clearCart();
+    clearCart();
   };
   if (cart.length === 0) {
     return (
